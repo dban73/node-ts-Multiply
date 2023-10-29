@@ -20,11 +20,11 @@ export class SaveFile implements SaveFileUseCase {
     try {
       mkdirSync(fileDestination, { recursive: true });
 
-      writeFileSync(`./${fileDestination}/table-${fileName}.txt`, fileContent);
+      writeFileSync(`./${fileDestination}/${fileName}.txt`, fileContent);
       console.log('Saved Successfully');
       return true;
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       return false;
     }
   }
